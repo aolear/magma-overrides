@@ -11,7 +11,7 @@ secrets:
 
 proxy:
   image:
-    repository: YOUR-DOCKER-REGISTRY/proxy # replace
+    repository: alexsonar.azurecr.io/orc8r_proxy
     tag: YOUR-CONTAINER-TAG # replace
 
   replicas: 2
@@ -28,7 +28,7 @@ proxy:
 
 controller:
   image:
-    repository: YOUR-DOCKER-REGISTRY/controller # replace
+    repository: alexsonar.azurecr.io/orc8r_controller
     tag: YOUR-CONTAINER-TAG # replace
 
   replicas: 2
@@ -71,7 +71,7 @@ metrics:
   configmanager:
     create: true
     image:
-      repository: YOUR-DOCKER-REGISTRY/config-manager # replace
+      repository: alexsonar.azurecr.io/orc8r_config-manager
       tag: YOUR-CONTAINER-TAG # replace
     nodeSelector:
       worker-type: metrics
@@ -84,7 +84,7 @@ metrics:
   prometheusCache:
     create: true
     image:
-      repository: YOUR-DOCKER-REGISTRY/prometheus-cache # replace
+      repository: alexsonar.azurecr.io/orc8r_prometheus-cache
       tag: YOUR-CONTAINER-TAG # replace
     limit: 500000
     nodeSelector:
@@ -93,7 +93,7 @@ metrics:
   grafana:
     create: true
     image:
-      repository: YOUR-DOCKER-REGISTRY/grafana # replace
+      repository: alexsonar.azurecr.io/orc8r_grafana
       tag: YOUR-CONTAINER-TAG # replace
     nodeSelector:
       worker-type: metrics
@@ -110,7 +110,7 @@ nms:
       rbac: false
 
     image:
-      repository: YOUR-DOCKER-REGISTRY/magmalte # replace
+      repository: alexsonar.azurecr.io/magmalte_magmalte
       tag: YOUR-CONTAINER-TAG # replace
 
     env:
