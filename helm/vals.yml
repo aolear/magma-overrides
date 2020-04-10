@@ -4,8 +4,8 @@ imagePullSecrets:
 secrets:
   create: true
   docker:
-    registry: YOUR-DOCKER-REGISTRY # replace
-    username: YOUR-DOCKER-USERNAME # replace
+    registry: alexsonar.azurecr.io
+    username: alexsonar
     password: YOUR-DOCKER-PASSWORD # replace
   
 
@@ -21,7 +21,7 @@ proxy:
     type: LoadBalancer
 
   spec:
-    hostname: controller.YOURDOMAIN.COM # replace
+    hostname: controller.bluechipmagma.com
 
   nodeSelector:
     worker-type: controller
@@ -40,7 +40,7 @@ controller:
   spec:
     database:
       host: YOUR POSTGRES HOST # replace
-      user: YOUR POSTGRES USERNAME # replace
+      user: orc8r
       pass: YOUR POSTGRES PASSWORD # replace
 
   nodeSelector:
@@ -114,10 +114,10 @@ nms:
       tag: YOUR-CONTAINER-TAG # replace
 
     env:
-      api_host: controller.YOURDOMAIN.COM # replace
+      api_host: PROXY HOST # replace
       mysql_host: YOUR RDS MYSQL HOST # replace
-      mysql_db: magma # replace
-      mysql_user: magma # replace
+      mysql_db: magma
+      mysql_user: magma
       mysql_pass: YOUR RDS MYSQL PASSWORD # replace
   nginx:
     manifests:
